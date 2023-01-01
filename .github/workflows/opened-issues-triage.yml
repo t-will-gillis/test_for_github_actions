@@ -5,6 +5,22 @@ on:
     types: [opened]
 
 jobs:
+
+  Hello-World:
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo "🎉 This test job for opened issues was automatically triggered by a ${{ github.event_name }} event."
+ 
+  Yo-Repo:
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo "yo repo ${{ github.repository }}"   
+     
+  Yo-Repo2:
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo "yo repo ${{ github.repository.url }}"   
+     
   automate-project-columns:
     runs-on: ubuntu-latest
     steps:
