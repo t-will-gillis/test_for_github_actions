@@ -32,15 +32,11 @@ jobs:
       with:
         name: my-artifact
         # path: path/to/artifact/world.txt
-    - shell: bash
-      run: |
-        value = `cat world.txt`
-        echo $value
+    
           
     - name: Echo download
       id: echo-download
-      run: echo ${{ steps.download-artifact.outputs.result }}
-
+      run: echo $my-artifact
 
 
     
