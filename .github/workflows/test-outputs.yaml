@@ -39,8 +39,10 @@ jobs:
       run: echo $my-artifact
 
     - name: Echo download2
+      uses: actions/github-script@v6
       id: echo-download2
       with:
+        github-token: ${{ secrets.TEST_GHAS }}
         script: |
           const sumthin = ${{ steps.download-artifact.outputs.result }};
           console.log(sumthin);
