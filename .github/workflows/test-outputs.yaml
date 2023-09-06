@@ -32,12 +32,10 @@ jobs:
       with:
         name: my-artifact
         # path: path/to/artifact/world.txt
-    
-          
-    - name: Echo download
-      id: echo-download
-      run: echo $my-artifact
 
+    - name: display artifact
+      run: ls -R
+      
     - name: Echo download2
       uses: actions/github-script@v6
       id: echo-download2
