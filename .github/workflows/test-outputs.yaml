@@ -37,7 +37,7 @@ jobs:
       run: ls -R
 
     - name: Echo download path
-      run: echo ${{ steps.download-artifact.outputs.download-path }}\world.txt
+      run: echo '${{ steps.download-artifact.outputs.download-path }}/world.txt'
 
       
     # - name: Echo download2
