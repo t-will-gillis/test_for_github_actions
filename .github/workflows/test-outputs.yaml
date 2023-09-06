@@ -30,7 +30,7 @@ jobs:
       id: download-artifact
       uses: actions/download-artifact@v3
       with:
-        name: trim_job_artifact
+        name: my-artifact
         path: path/to/artifact/world.txt
 
     - name: Echo download
