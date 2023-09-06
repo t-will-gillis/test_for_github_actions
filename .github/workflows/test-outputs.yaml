@@ -40,14 +40,15 @@ jobs:
       run: echo '${{ steps.download-artifact.outputs.download-path }}/world.txt'
 
       
-    # - name: Echo download2
-    #   uses: actions/github-script@v6
-    #   id: echo-download2
-    #   with:
-    #     github-token: ${{ secrets.TEST_GHAS }}
-    #     script: |
-    #       const sumthin = ${{ steps.download-artifact.outputs.result }};
-    #       console.log(sumthin);
+    - name: Echo download2
+      uses: actions/github-script@v6
+      id: echo-download2
+      with:
+        github-token: ${{ secrets.TEST_GHAS }}
+        script: |
+          const script = require('./artifact.js')
+          const blah = script({g: github, c: context});
+          return blah;
 
 
     
