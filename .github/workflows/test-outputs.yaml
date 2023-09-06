@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Test_Up_Downloads:
+  Test_Upload:
     runs-on: ubuntu-latest
     
     steps:
@@ -18,3 +18,21 @@ jobs:
       with:
         name: my-artifact
         path: path/to/artifact/world.txt
+
+  Test_Download:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    # Download artifact file 
+    - name: Download artifact
+      id: download-artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: trim_job_artifact
+        path: path/to/artifact/world.txt
+
+    - name: Echo download
+      id: echo-download
+      run: echo ${{ steps.download-artifact.outputs.result }}
+      
