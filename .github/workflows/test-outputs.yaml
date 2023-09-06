@@ -38,6 +38,12 @@ jobs:
       id: echo-download
       run: echo $my-artifact
 
+    - name: Echo download2
+      id: echo-download2
+      with:
+        script: |
+          console.log(my-artifact);
+
 
     
       
