@@ -47,7 +47,7 @@ jobs:
       with:
         github-token: ${{ secrets.TEST_GHAS }}
         script: |
-          const script = require('https://github.com/t-will-gillis/test_for_github_actions/blob/main/.github/workflows/artifact.js');
+          const script = require('/artifact.js');
           const blah = script({g: github, c: context});
           return blah;
 
