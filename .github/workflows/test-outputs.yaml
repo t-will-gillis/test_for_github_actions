@@ -35,6 +35,10 @@ jobs:
 
     - name: display artifact
       run: ls -R
+
+    - name: 'Echo download path'
+      run: echo ${{steps.download-artifact.outputs.download-path}}
+
       
     - name: Echo download2
       uses: actions/github-script@v6
