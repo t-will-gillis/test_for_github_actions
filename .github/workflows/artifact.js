@@ -20,3 +20,5 @@ async function main({ g, c }) {
     console.log(response.downloadPath);
   }
 }
+
+module.exports = main;
