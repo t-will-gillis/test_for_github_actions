@@ -19,3 +19,4 @@ async function main({ g, c }) {
     console.log(response.artifactName);
     console.log(response.downloadPath);
   }
+}
