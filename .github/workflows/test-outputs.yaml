@@ -41,9 +41,7 @@ jobs:
       id: echo-download
       run: echo ${{ steps.download-artifact.outputs.result }}
 
-    - name: Echo download2
-      id: echo-download2
-      run: echo ${{ my-artifact }}
+
 
     
       
