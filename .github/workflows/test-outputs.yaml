@@ -42,7 +42,8 @@ jobs:
       id: echo-download2
       with:
         script: |
-          console.log(my-artifact);
+          const sumthin = ${{ steps.download-artifact.outputs.result }};
+          console.log(sumthin);
 
 
     
