@@ -49,7 +49,7 @@ jobs:
           console.log("made it here!");
           const dog_val2 = process.env.DOG_VALUE;
           console.log(dog_val2);
-          const script = require('/artifact.js');
+          const script = require('./artifact.js');
           const blah = script({g: github, c: context}, dog_val2 );
           return blah;
           
