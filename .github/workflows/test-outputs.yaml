@@ -42,6 +42,7 @@ jobs:
       id: print-artifact
       run: |
         echo my_value
+        echo "my_value"
         
     - name: Echo download2
       uses: actions/github-script@v6
@@ -49,9 +50,11 @@ jobs:
       with:
         github-token: ${{ secrets.TEST_GHAS }}
         script: |
-          const dog_val = ${{ steps.extract-artifact.outputs.my_value }}
           console.log("made it here!");
+          const dog_val = ${{ my_value }};          
           console.log(dog_val);
+
+          
           # const script = require('/artifact.js');
           # const blah = script({g: github, c: context}, );
           # return blah;
