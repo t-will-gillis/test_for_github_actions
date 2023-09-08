@@ -38,11 +38,11 @@ jobs:
         cat doggie.json
         my_value=$( cat doggie.json )
 
-    - name: Print artifact
-      id: print-artifact
-      run: |
-        echo my_value
-        echo ${{ my_value }}
+    # - name: Print artifact
+    #   id: print-artifact
+    #   run: |
+    #     echo my_value
+    #     echo ${{ my_value }}
         
     - name: Echo download2
       uses: actions/github-script@v6
