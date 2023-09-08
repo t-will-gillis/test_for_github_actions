@@ -17,7 +17,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: world.txt
+        path: .github/workflows
 
   Test_Download:
     needs: Test_Upload
@@ -31,7 +31,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: my-artifact
-        # path: path/to/artifact/world.txt
+        path: .github/workflows
 
     - name: display artifact
       run: ls -R
@@ -39,17 +39,20 @@ jobs:
     - name: Echo download path
       run: echo '${{ steps.download-artifact.outputs.download-path }}/world.txt'
 
+    - name: Extract artifact
+      id: extract-artifact
+      run: |
+        cat .github/workflows/world.txt
       
-    - name: Echo download2
-     
-      uses: actions/github-script@v6
-      id: echo-download2
-      with:
-        github-token: ${{ secrets.TEST_GHAS }}
-        script: |
-          const script = require('/artifact.js');
-          const blah = script({g: github, c: context});
-          return blah;
+    # - name: Echo download2
+    #   uses: actions/github-script@v6
+    #   id: echo-download2
+    #   with:
+    #     github-token: ${{ secrets.TEST_GHAS }}
+    #     script: |
+    #       const script = require('/artifact.js');
+    #       const blah = script({g: github, c: context});
+    #       return blah;
 
     # - name: Echo download3
     #   uses: actions/github-script@v6
