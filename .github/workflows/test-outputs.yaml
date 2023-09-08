@@ -12,12 +12,15 @@ jobs:
     
     - run: mkdir -p path/to/artifact
     
-    - run: echo yo wassup > world.txt
+    - name: Run an echo 
+      run: |
+        echo yo wassup dogg > world.txt
+        echo cat world.txt
     
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: path/to/artifact
+        path: path/to/artifact/world.txt
 
   Test_Download:
     needs: Test_Upload
@@ -31,7 +34,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: my-artifact
-        path: path/to/artifact
+        path: path/to/artifact/world.txt
 
     - name: display artifact
       run: ls -R
