@@ -36,8 +36,9 @@ jobs:
       id: extract-artifact
       run: |
         cat doggie.json
-        my_value=$( cat doggie.json )
-        echo "DOG_VAL=my_value" >> $GITHUB_ENV
+        MY_VALUE=$( cat doggie.json )
+        echo MY_VALUE
+        echo "MY_VALUE" >> $GITHUB_ENV
 
 
     # - name: Print artifact
@@ -53,7 +54,7 @@ jobs:
         github-token: ${{ secrets.TEST_GHAS }}
         script: |
           console.log("made it here!");
-          const dog_val2 = process.env.DOG_VAL;
+          const dog_val2 = process.env.MY_VALUE;
           console.log(dog_val2);
 
           
