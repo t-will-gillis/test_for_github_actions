@@ -37,7 +37,7 @@ jobs:
       run: |
         cat doggie.json
         my_value=$( cat doggie.json )
-        echo "DOG_VAL=my_val" >> $GITHUB_ENV
+        echo "DOG_VAL=my_value" >> $GITHUB_ENV
 
 
     # - name: Print artifact
