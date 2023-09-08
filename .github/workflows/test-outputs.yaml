@@ -36,9 +36,7 @@ jobs:
       id: extract-artifact
       run: |
         cat doggie.json
-        MY_VALUE=$( cat doggie.json )
-        cat MY_VALUE
-        echo "DOG_VALUE= cat MY_VALUE" >> $GITHUB_ENV
+        echo "::set-env name=DOG_VALUE::$(cat doggie.json)"
         
     - name: Echo download2
       uses: actions/github-script@v6
