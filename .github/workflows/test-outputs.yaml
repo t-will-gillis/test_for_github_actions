@@ -32,20 +32,22 @@ jobs:
       with:
         name: doggie
 
-    - name: display artifact
-      run: ls -R
+    # - name: display artifact
+    #   run: ls -R
 
-    - name: Extract artifact
-      id: extract-artifact
-      run: |
-        cat doggie.json
+    # - name: Extract artifact
+    #   id: extract-artifact
+    #   run: |
+    #     cat doggie.json
       
-    # - name: Echo download2
-    #   uses: actions/github-script@v6
-    #   id: echo-download2
-    #   with:
-    #     github-token: ${{ secrets.TEST_GHAS }}
-    #     script: |
+    - name: Echo download2
+      uses: actions/github-script@v6
+      id: echo-download2
+      with:
+        github-token: ${{ secrets.TEST_GHAS }}
+        script: |
+          cat doggie.json
+          
     #       const script = require('/artifact.js');
     #       const blah = script({g: github, c: context}, );
     #       return blah;
