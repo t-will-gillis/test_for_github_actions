@@ -49,13 +49,13 @@ jobs:
           console.log("made it here!");
           const dog_val2 = process.env.DOG_VALUE;
           console.log(dog_val2);
-
+          const script = require('/artifact.js');
+          const blah = script({g: github, c: context}, dog_val2 );
+          return blah;
           
     # const dog_val2 = ${{ env.dog_val }};          
     # console.log(dog_val2);          
-    # const script = require('/artifact.js');
-    # const blah = script({g: github, c: context}, );
-    # return blah;
+    
 
     # - name: Echo download3
     #   uses: actions/github-script@v6
