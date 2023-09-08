@@ -53,8 +53,8 @@ jobs:
         github-token: ${{ secrets.TEST_GHAS }}
         script: |
           console.log("made it here!");
-          const dog_val2 = ${{ env.dog_val }};          
-          console.log(dog_val2);
+          # const dog_val2 = ${{ env.dog_val }};          
+          # console.log(dog_val2);
 
           
           # const script = require('/artifact.js');
