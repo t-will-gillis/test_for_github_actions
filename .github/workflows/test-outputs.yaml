@@ -14,8 +14,8 @@ jobs:
     
     - name: Run an echo 
       run: |
-        yo wassup dogg > path/to/artifact/world.txt
-        cat world.txt
+        cat > path/to/artifact/world.txt
+        yo wassup doggy dog
     
     - uses: actions/upload-artifact@v3
       with:
