@@ -17,7 +17,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: .github/workflows
+        path: path/to/artifact
 
   Test_Download:
     needs: Test_Upload
@@ -31,7 +31,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: my-artifact
-        path: .github/workflows
+        path: path/to/artifact
 
     - name: display artifact
       run: ls -R
@@ -42,7 +42,7 @@ jobs:
     - name: Extract artifact
       id: extract-artifact
       run: |
-        cat .github/workflows/world.txt
+        cat path/to/artifact/world.txt
       
     # - name: Echo download2
     #   uses: actions/github-script@v6
