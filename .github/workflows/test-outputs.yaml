@@ -13,12 +13,20 @@ jobs:
     
     - name: Run an echo 
       run: |
-        echo yo wassup doggy dog > doggie.txt
+        echo [{"removedContributors": ["cnk"],"notifiedContributors": ["cnk","angieyan","ykim25","vanyanv"]}] > doggie.json
+
+
+
+  
+
+
+
+
         
     - uses: actions/upload-artifact@v3
       with:
         name: doggie
-        path: doggie.txt
+        path: doggie.json
 
   Test_Download:
     needs: Test_Upload
@@ -39,7 +47,7 @@ jobs:
     - name: Extract artifact
       id: extract-artifact
       run: |
-        cat doggie.txt
+        cat doggie.json
       
     # - name: Echo download2
     #   uses: actions/github-script@v6
@@ -48,7 +56,7 @@ jobs:
     #     github-token: ${{ secrets.TEST_GHAS }}
     #     script: |
     #       const script = require('/artifact.js');
-    #       const blah = script({g: github, c: context});
+    #       const blah = script({g: github, c: context}, );
     #       return blah;
 
     # - name: Echo download3
