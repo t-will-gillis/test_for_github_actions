@@ -10,17 +10,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - run: mkdir -p path/to/artifact
+    - run: mkdir -p .github/workflows/artifact
     
     - name: Run an echo 
       run: |
-        cat > path/to/artifact/world.txt
+        cat > .github/workflows/artifact/world.txt
         yo wassup doggy dog
     
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: path/to/artifact/world.txt
+        path: .github/workflows/artifact/world.txt
 
   Test_Download:
     needs: Test_Upload
@@ -34,7 +34,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: my-artifact
-        path: path/to/artifact/world.txt
+        path: .github/workflows/artifact/world.txt
 
     - name: display artifact
       run: ls -R
@@ -45,7 +45,7 @@ jobs:
     - name: Extract artifact
       id: extract-artifact
       run: |
-        cat path/to/artifact/world.txt
+        cat .github/workflows/artifact/world.txt
       
     # - name: Echo download2
     #   uses: actions/github-script@v6
