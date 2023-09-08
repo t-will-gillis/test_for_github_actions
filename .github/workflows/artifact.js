@@ -5,20 +5,12 @@ const fs = require("fs");
 var github;
 var context;
 
-async function main({ g, c }) {
+async function main({ g, c }, artifact) {
   github = g;
   context = c;
 
-
-  const artifact = require('@actions/artifact');
-  const artifactClient = artifact.create();
-  const downloadResponse = await artifactClient.downloadAllArtifacts();
-
-  // output result
-  for (response in downloadResponse) {
-    console.log(response.artifactName);
-    console.log(response.downloadPath);
-  }
+  console.log(artifact)
+  
 }
 
 module.exports = main;
