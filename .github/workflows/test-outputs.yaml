@@ -52,14 +52,14 @@ jobs:
       with:
         github-token: ${{ secrets.TEST_GHAS }}
         script: |
-          console.log("made it here!");
-          # const dog_val2 = ${{ env.dog_val }};          
-          # console.log(dog_val2);
+          console.log("made it here!")
 
           
-          # const script = require('/artifact.js');
-          # const blah = script({g: github, c: context}, );
-          # return blah;
+    # const dog_val2 = ${{ env.dog_val }};          
+    # console.log(dog_val2);          
+    # const script = require('/artifact.js');
+    # const blah = script({g: github, c: context}, );
+    # return blah;
 
     # - name: Echo download3
     #   uses: actions/github-script@v6
