@@ -52,7 +52,9 @@ jobs:
       with:
         github-token: ${{ secrets.TEST_GHAS }}
         script: |
-          console.log("made it here!")
+          console.log("made it here!");
+          const dog_val2 = ${{ steps.extract-artifact.outputs.result }};
+          console.log(dog_val2);
 
           
     # const dog_val2 = ${{ env.dog_val }};          
