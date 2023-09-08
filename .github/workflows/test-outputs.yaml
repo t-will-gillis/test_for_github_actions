@@ -42,7 +42,7 @@ jobs:
       id: print-artifact
       run: |
         echo my_value
-        echo "my_value"
+        echo ${{ my_value }}
         
     - name: Echo download2
       uses: actions/github-script@v6
