@@ -15,7 +15,7 @@ async function main({ g, c }) {
   github = g;
   context = c;
 
-  const data = {"names": ["cnk","angieyan","ykim25","vanyanv"]}
+  const data = {"names": ["cnk","angieyan","ykim25","vanyanv","t-will-gillis"]}
   writeData(data)
 }
   function writeData(data){
