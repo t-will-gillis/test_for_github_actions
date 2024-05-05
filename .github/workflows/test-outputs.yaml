@@ -24,7 +24,16 @@ jobs:
           const results = script({ g: github, c: context })
           return results
 
+    - name: update data json
+      id: update-data-json
+      uses: stefanzweifel/git-auto-commit-action@v5.0.1
+      with:
+       # Glob pattern of file which should be added to the commit
+        file_pattern: github-actions/test-runs/data.json
 
+        # Optional commit message and author settings
+        commit_message: Update Data JSON
+ 
        
     - uses: actions/upload-artifact@v4
       with:
@@ -36,9 +45,9 @@ jobs:
       id: save-data
       uses: actions/github-script@v7
       with:
-        github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-          const results = ${{ steps.get-contributors.outputs.result }}
+          const results = ${{ steps.define-data.result }}
           const script = require('./github-actions/trigger-schedule/list-inactive-members/trim-inactive-members.js')
           script({ g: github, c: context }, results)
 
