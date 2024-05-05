@@ -20,9 +20,8 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-          const datasend = doggie.json
-          const script = require('./github-actions/test-runs/test-run.js')
-          const results = script({ g: github, c: context }, datasend)
+          const script = require('./github-actions/test-runs/test-run1.js')
+          const results = script({ g: github, c: context })
           return results
 
 
