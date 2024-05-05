@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Run an echo 
       run: |
         echo [{"removedContributors": ["cnk"],"notifiedContributors": ["cnk","angieyan","ykim25","vanyanv"]}] > doggie.json
        
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: doggie
         path: doggie.json
