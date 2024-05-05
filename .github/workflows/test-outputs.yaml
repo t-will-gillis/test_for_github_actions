@@ -33,23 +33,12 @@ jobs:
 
         # Optional commit message and author settings
         commit_message: Update Data JSON
- 
+
        
     - uses: actions/upload-artifact@v4
       with:
         name: doggie
         path: doggie.json
-
-
-    - name: Save data
-      id: save-data
-      uses: actions/github-script@v7
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          const results = ${{ steps.define-data.result }}
-          const script = require('./github-actions/trigger-schedule/list-inactive-members/trim-inactive-members.js')
-          script({ g: github, c: context }, results)
 
   Test_Download:
     needs: Test_Upload
